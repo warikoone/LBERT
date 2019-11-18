@@ -1,0 +1,8 @@
+{
+"posTagFile":"$LBERTDIR/SInD/src/com/prj/bundle/resource/instancePosTaggedStream.txt",
+"chunkFile":"$LBERTDIR/SInD/src/com/prj/bundle/resource/instanceChunkStream.txt",
+"filterSize":"3",
+"strideSize":"1",
+"featureFile":"$LBERTDIR/SInD/src/com/prj/bundle/processed",
+"invarThreshold":"1.0"
+}
