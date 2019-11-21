@@ -1,7 +1,7 @@
 '''
 Created on Jun 10, 2019
 
-@author: iasl
+@author: neha@iasl
 '''
 import os
 import sys
@@ -14,10 +14,10 @@ from sklearn.model_selection import KFold
 import socket
 
 
-if socket.gethostname() == 'iaslgpu3':
-    sys.path.append('/home/neha/nlp/NeonWorkspace_1.6/ValidationSet_Generation')
-elif  socket.gethostname() == 'iaslgpu5':
-    sys.path.append('/home/iasl/Neha_W/NeonWorkspace_1.6/ValidationSet_Generation')
+if socket.gethostname() == 'GPU_1':
+    sys.path.append('./ValidationSet_Generation')
+elif  socket.gethostname() == 'GPU_2':
+    sys.path.append('./ValidationSet_Generation')
 
 class ValadationSet(object):
     
@@ -91,7 +91,6 @@ def openConfigurationFile(decoyInstance):
             configFile="".join([configFile,"config.json"])
         
         #with tf.gfile.GFile(configFile, "r") as reader:
-        print(configFile)
         tier1BufferDict = {}
         with open(configFile, "r") as json_file:
             data = json.load(json_file)
@@ -107,7 +106,7 @@ def readResource(decoyInstance):
     decoyInstance.rawTextDict = collections.OrderedDict()
     #with open(decoyInstance.configFileDesc["corpusFile"], "r") as bufferFile:
     print('now',sys.getdefaultencoding())
-    fp='/home/iasl/Neha_W/Complete/OriginalStream.txt'
+    fp='$LBERTDIR/OriginalStream.txt'
     #fp = (''.join(fp)).encode('utf_8')
     with open(fp, "r") as bufferFile:
         currentData = bufferFile.readline()
@@ -137,7 +136,7 @@ def readResource(decoyInstance):
 def readPosResource(decoyInstance):
 
     decoyInstance.rawPosDict = collections.OrderedDict()
-    fp='/home/iasl/Neha_W/Complete/PosTaggedStream.txt'
+    fp='$LBERTDIR/PosTaggedStream.txt'
     #with open(decoyInstance.configFileDesc["corpusPosFile"], "r") as bufferFile:
     with open(fp, "r") as bufferFile:
         currentData = bufferFile.readline()
@@ -172,7 +171,6 @@ def main(_):
     readResource(validationInstance)
     readPosResource(validationInstance)
     path = os.getcwd()
-    print(path)
     outFilePath = re.sub("/sorting", '/processed', path)
     outFileName = outFilePath+"/"+"instancedOriginalStream.txt"
     outPosFileName = outFilePath+"/"+"instancePosTaggedStream.txt"
