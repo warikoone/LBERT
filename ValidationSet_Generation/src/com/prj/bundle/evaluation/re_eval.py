@@ -10,12 +10,10 @@ from collections import Counter
 from operator import itemgetter
 import socket
 
-if socket.gethostname() == 'iaslgpu3':
-    sys.path.append('/home/neha/nlp/NeonWorkspace_1.6/ValidationSet_Generation')
-elif  socket.gethostname() == 'iaslgpu5':
-    sys.path.append('/home/iasl/Neha_W/NeonWorkspace_1.6/ValidationSet_Generation')
-
-#sys.path.append('/home/iasl/Neha_W/NeonWorkspace_1.6/ValidationSet_Generation')
+if socket.gethostname() == 'GPU_1':
+    sys.path.append('./ValidationSet_Generation')
+elif  socket.gethostname() == 'GPU_2':
+    sys.path.append('./ValidationSet_Generation')
 
 
 def openConfigurationFile(config_desc):
@@ -27,7 +25,6 @@ def openConfigurationFile(config_desc):
         configFile = tokenMatcher.group(0)
         configFile="".join([configFile,"config.json"])
         
-    #with tf.gfile.GFile(configFile, "r") as reader:
     with open(configFile, "r") as json_file:
         data = json.load(json_file)
         for (key, value) in six.iteritems(data):
@@ -119,7 +116,7 @@ for i in range(len(y_pred)):
             noben += 1
         
     
-print('fn::',fn,'\t fp::',fp,'\t multiple::',addben,'\t single::',noben)
+#print('fn::',fn,'\t fp::',fp,'\t multiple::',addben,'\t single::',noben)
 
 
     
