@@ -1,7 +1,7 @@
 '''
 Created on Jun 10, 2019
 
-@author: iasl
+@author: neha@iasl
 '''
 import os
 import sys
@@ -13,7 +13,9 @@ import collections
 from sklearn.model_selection import KFold
 
 class ValadationSet(object):
-    
+    ''' 
+    Generate cross validation data sets for Tokenized, POS Tag, and Chunk data sets
+    '''
     def __init__(self):
         self.configFileDesc = {}
         self.rawTextDict = {}
