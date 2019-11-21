@@ -1,7 +1,7 @@
 {
-"corpusFile":"/home/iasl/Neha_W/NeonWorkspace_1.6/PPI_Preprocessing/src/com/prj/bundle/processed/instancedOriginalStream.txt",
-"corpusPosFile":"/home/iasl/Neha_W/NeonWorkspace_1.6/PPI_Preprocessing/src/com/prj/bundle/processed/instancePosTaggedStream.txt",
-"resultDir":"/home/iasl/Neha_W/NeonWorkspace_1.6/ValidationSet_Generation/src/com/prj/bundle/processed",
+"corpusFile":"$LBERTDIR/Preprocessing/src/com/prj/bundle/processed/instancedOriginalStream.txt",
+"corpusPosFile":"$LBERTDIR/Preprocessing/src/com/prj/bundle/processed/instancePosTaggedStream.txt",
+"resultDir":"$LBERTDIR/ValidationSet_Generation/src/com/prj/bundle/processed",
 "foldSplit":"10",
 "testFold":"1"
 }
