@@ -1,7 +1,7 @@
 '''
 Created on Aug 6, 2019
 
-@author: iasl
+@author: neha@iasl
 '''
 import os,sys
 import numpy as np
