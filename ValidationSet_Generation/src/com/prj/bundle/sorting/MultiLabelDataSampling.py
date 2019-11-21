@@ -221,7 +221,6 @@ class ValadationSet(object):
             self.writeToFile(passIndex, testIndex, "test")
             self.writeToFile(passIndex, list(), "dev")
             passIndex = passIndex+1
-            #sys.exit()
         '''    
         #trainIndex = bufferArray
         testIndex = bufferArray
