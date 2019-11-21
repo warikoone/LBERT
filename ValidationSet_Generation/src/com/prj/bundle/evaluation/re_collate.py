@@ -16,12 +16,10 @@ from operator import itemgetter
 import socket
 import path
 
-if socket.gethostname() == 'iaslgpu3':
-    sys.path.append('/home/neha/nlp/NeonWorkspace_1.7/ValidationSet_Generation')
-elif  socket.gethostname() == 'iaslgpu5':
-    sys.path.append('/home/iasl/Neha_W/NeonWorkspace_1.7/ValidationSet_Generation')
-
-#sys.path.append('/home/iasl/Neha_W/NeonWorkspace_1.6/ValidationSet_Generation')
+if socket.gethostname() == 'GPU_1':
+    sys.path.append('./ValidationSet_Generation')
+elif  socket.gethostname() == 'GPU_2':
+    sys.path.append('./ValidationSet_Generation')
 
 
 def reverseMap():
