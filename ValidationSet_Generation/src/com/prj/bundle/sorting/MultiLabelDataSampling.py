@@ -1,7 +1,7 @@
 '''
 Created on Aug 23, 2019
 
-@author: iasl
+@author: neha@iasl
 '''
 
 import os
@@ -16,7 +16,9 @@ from sklearn.model_selection import KFold
 import numpy as np
 
 class ValadationSet(object):
-    
+    '''
+    Validation data sets for multi-class label data sets
+    '''
     def __init__(self):
         self.configFileDesc = {}
         self.rawTextDict = {}
@@ -42,6 +44,10 @@ class ValadationSet(object):
             tier1FWriteBuffer.write('index\tsentence\tlabel\n')
             tier2FWriteBuffer.write('index\tsentence\tlabel\n')
             tier3FWriteBuffer.write('index\tsentence\tlabel\n')
+        '''
+        Labels for added for CPR and REL datasets 
+        Alternate between the commented section for CPR and REL datasets
+        '''
         for index, value in enumerate(bufferArray):
             #Original Text
             tier1BufferDict = self.rawTextDict.get(value)
@@ -304,11 +310,6 @@ def sanityTest(decoyInstance):
         posDict = list(decoyInstance.rawPosDict.get(index).keys())
         chunkDict = list(decoyInstance.rawChunkDict.get(index).keys())
         for j in range(len(textDict)):
-            '''
-            print(len(textDict[j].split()))
-            print(len(posDict[j].split()))
-            print(len(chunkDict[j].split()))
-            '''
             if(len(textDict[j].split()) and len(posDict[j].split()) and len(chunkDict[j].split())):
                 continue
             else:
